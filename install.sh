@@ -33,6 +33,7 @@ dnf install -y git maven java-1.8.0-openjdk-devel
 
 
 echo "export LANG=en_US.utf8" >> /etc/environment
+echo "export JAVA_HOME=/etc/alternatives/java_jdk" >> /etc/environment
 
 systemctl enable --now chronyd
 chronyc tracking
