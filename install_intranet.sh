@@ -38,8 +38,8 @@ echo "export JAVA_HOME=/etc/alternatives/java_jdk" >> /etc/environment
 systemctl enable --now chronyd
 chronyc tracking
 
-firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.34.0/24" port protocol="tcp" port="22" accept'
 firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.34.0/24" port protocol="tcp" port="1-65535" accept'
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.35.0/24" port protocol="tcp" port="1-65535" accept'
 
 firewall-cmd --permanent --zone=public --remove-service=ssh
 firewall-cmd --permanent --zone=public --remove-service=cockpit
