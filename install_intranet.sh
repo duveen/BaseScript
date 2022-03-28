@@ -19,10 +19,12 @@ REPO=/etc/yum.repos.d/Rocky-Extras.repo
 MOVE_REPOS="http:\/\/${MIRROR}\/extras\/x86_64\/os"
 sed  -i.bak -re "s/^(mirrorlist(.*))/##\1/g" -re "s/[#]*baseurl(.*)/baseurl=${MOVE_REPOS}/" ${REPO}
 
+wget https://raw.githubusercontent.com/duveen/BaseScript/main/epel-yjsoft -O /etc/yum.repos.d/epel.repo
+wget https://raw.githubusercontent.com/duveen/BaseScript/main/epel-modular-yjsoft -O /etc/yum.repos.d/epel-modular.repo
+
 ## check
 dnf update -y
 
-dnf install -y epel-release
 dnf install -y htop
 dnf install -y langpacks-en
 dnf groupinstall -y "Development Tools"
