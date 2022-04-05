@@ -17,4 +17,4 @@ sudo cat <<EOF | sudo tee /etc/docker/daemon.json
 }
 EOF
 
-sudo systemctl start docker
+sudo systemctl enable --now docker
