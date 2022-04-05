@@ -28,7 +28,7 @@ dnf update -y
 dnf install -y htop
 dnf install -y langpacks-en
 dnf groupinstall -y "Development Tools"
-dnf install -y git maven java-1.8.0-openjdk-devel
+dnf install -y java-1.8.0-openjdk-devel git maven gradle
 
 echo "export LANG=en_US.utf8" >> /etc/environment
 echo "export JAVA_HOME=/etc/alternatives/java_sdk" >> /etc/environment
