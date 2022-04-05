@@ -26,7 +26,7 @@ dnf install -y epel-release
 dnf install -y htop
 dnf install -y langpacks-en
 dnf groupinstall -y "Development Tools"
-dnf install -y git maven java-1.8.0-openjdk-devel
+dnf install -y java-1.8.0-openjdk-devel git maven gradle
 
 echo "export LANG=en_US.utf8" >> /etc/environment
 echo "export JAVA_HOME=/etc/alternatives/java_sdk" >> /etc/environment
@@ -35,6 +35,9 @@ systemctl enable --now chronyd
 chronyc tracking
 
 firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="222.236.125.250" port protocol="tcp" port="1-65535" accept'
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="222.236.125.250" port protocol="udp" port="1-65535" accept'
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.5.0.0/16" port protocol="tcp" port="1-65535" accept'
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.5.0.0/16" port protocol="udp" port="1-65535" accept'
 firewall-cmd --permanent --zone=public --remove-service=ssh
 firewall-cmd --permanent --zone=public --remove-service=cockpit
 
