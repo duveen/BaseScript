@@ -5,7 +5,7 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-MIRROR="ftp.yjsoft.xyz\/rocky-linux\/8.5"
+MIRROR="mirror.anigil.com\/rocky\/8.6"
 
 REPO=/etc/yum.repos.d/Rocky-AppStream.repo
 MOVE_REPOS="http:\/\/${MIRROR}\/AppStream\/x86_64\/os"
@@ -36,8 +36,8 @@ chronyc tracking
 
 firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="222.236.125.250" port protocol="tcp" port="1-65535" accept'
 firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="222.236.125.250" port protocol="udp" port="1-65535" accept'
-firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.5.0.0/16" port protocol="tcp" port="1-65535" accept'
-firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.5.0.0/16" port protocol="udp" port="1-65535" accept'
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.7.0.0/16" port protocol="tcp" port="1-65535" accept'
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.7.0.0/16" port protocol="udp" port="1-65535" accept'
 firewall-cmd --permanent --zone=public --remove-service=ssh
 firewall-cmd --permanent --zone=public --remove-service=cockpit
 
