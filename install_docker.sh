@@ -5,5 +5,5 @@ sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl enable --now docker
-wget https://github.com/docker/compose/releases/download/v2.20.1/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
+wget https://download.sharenshare.kr/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
 chmod +x /usr/bin/docker-compose
